@@ -111,7 +111,7 @@ require dirname(__FILE__)."/lib/countrycodes.php";
             background-color: #171734 !important;
             border-color: #171734 !important;
         }
-        h1.dark, p.dark, a.dark, label.dark, h4.dark, input.dark, select.dark{
+        h1.dark, p.dark, a.dark, label.dark, h4.dark, input.dark, select.dark, .linksholder.dark i, .linksholder.dark a{
             color: #ffffff !important;
         }
         input.dark:focus{
@@ -298,6 +298,7 @@ else if($api['footer']->footer_en_enabled==1)
         $('h4').addClass("dark");
         $('input').addClass("dark");
         $('select').addClass("dark");
+        $('i').addClass("dark");
     </script>
 <?php } ?>
 
@@ -319,8 +320,9 @@ else if($api['footer']->footer_en_enabled==1)
             $('.btn-light').addClass("dark");
             $('label').addClass("dark");
             $('h4').addClass("dark");
-            $('input').addClass("dark");
+            $('input[type = "text"]').addClass("dark");
             $('select').addClass("dark");
+            $('.linksholder').addClass("dark");
 
             $.ajax({
                 method: "get",
@@ -340,8 +342,9 @@ else if($api['footer']->footer_en_enabled==1)
             $('.btn-light').removeClass("dark");
             $('label').removeClass("dark");
             $('h4').removeClass("dark");
-            $('input').removeClass("dark");
+            $('input[type = "text"]').removeClass("dark");
             $('select').removeClass("dark");
+            $('.linksholder').removeClass("dark");
 
 
             $('#site-logo').attr('src', '<?php echo $api['site_profile']->logo_en_path; ?>');

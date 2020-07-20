@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                                 <div class="preloader"><i class="fa fa-cog fa-spin"></i></div>
-                                <div class="form-group text-center linksholder"></div>
+                                <div class="form-group text-center linksholder  <?php echo $_SESSION['mode'] == 'night' ? 'dark' : ''; ?>"></div>
                             </div>
 
 
