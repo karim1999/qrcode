@@ -91,7 +91,16 @@ require dirname(__FILE__)."/lib/countrycodes.php";
     <?php echo setMainColor($color_primary); ?>
     <?php if($_SESSION["mode"] == 'night'){ ?>
         <style>
-
+            /*label, h4, input, select{*/
+            /*    color: #ffffff !important;*/
+            /*}*/
+            /*input:focus{*/
+            /*    background-color: #171734 !important;*/
+            /*}*/
+            /*label{*/
+            /*    background-color: transparent !important;*/
+            /*    border-color: transparent !important;*/
+            /*}*/
         </style>
     <?php } ?>
     <style>
@@ -102,8 +111,11 @@ require dirname(__FILE__)."/lib/countrycodes.php";
             background-color: #171734 !important;
             border-color: #171734 !important;
         }
-        h1.dark, p.dark, a.dark{
+        h1.dark, p.dark, a.dark, label.dark, h4.dark, input.dark, select.dark{
             color: #ffffff !important;
+        }
+        input.dark:focus{
+            background-color: #171734 !important;
         }
         .switch {
             position: relative;
@@ -273,6 +285,22 @@ else if($api['footer']->footer_en_enabled==1)
 <?php }else{ ?>
     <iframe src="https://footer.devlab.ae/<?php echo $lang; ?>?mode=day&night_bg=f8f9fa&day_bg=f8f9fa" class="col-12 footer-iframe px-0" style="width: 100%" id="devlab-footer"></iframe>
 <?php } ?>
+<?php if($_SESSION["mode"] == 'night'){ ?>
+    <script type="text/javascript">
+        $('body').addClass("dark");
+        $('html').addClass("dark");
+        $('.container').addClass("dark");
+        $('.language-link').addClass("dark");
+        $('.switch-label').addClass("dark");
+        $('.bg-white').addClass("dark");
+        $('.btn-light').addClass("dark");
+        $('label').addClass("dark");
+        $('h4').addClass("dark");
+        $('input').addClass("dark");
+        $('select').addClass("dark");
+    </script>
+<?php } ?>
+
 <script type="text/javascript">
     $('#inlineCheckbox1').change(function() {
 
@@ -289,6 +317,10 @@ else if($api['footer']->footer_en_enabled==1)
             $('.switch-label').addClass("dark");
             $('.bg-white').addClass("dark");
             $('.btn-light').addClass("dark");
+            $('label').addClass("dark");
+            $('h4').addClass("dark");
+            $('input').addClass("dark");
+            $('select').addClass("dark");
 
             $.ajax({
                 method: "get",
@@ -306,6 +338,10 @@ else if($api['footer']->footer_en_enabled==1)
             $('.switch-label').removeClass("dark");
             $('.bg-white').removeClass("dark");
             $('.btn-light').removeClass("dark");
+            $('label').removeClass("dark");
+            $('h4').removeClass("dark");
+            $('input').removeClass("dark");
+            $('select').removeClass("dark");
 
 
             $('#site-logo').attr('src', '<?php echo $api['site_profile']->logo_en_path; ?>');
