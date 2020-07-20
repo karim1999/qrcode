@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://livesubcount.io/sitemap.xml
+Sitemap: https://qr-code-generator.io/sitemap.xml
