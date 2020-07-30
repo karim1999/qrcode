@@ -217,6 +217,15 @@ require dirname(__FILE__)."/lib/countrycodes.php";
             echo $api['advs']->popup_en;
         ?>
     </div>
+    <?php if($api['advs']->header_status==1){ ?>
+    <div class="col-12 px-0" style="background-color: #EB593C; color: white; text-align: center; padding: 5px">
+        <?php if($lang=="ar"){ ?>
+            <?php echo $api['advs']->header_ar; ?>
+        <?php }else{ ?>
+            <?php echo $api['advs']->header_en; ?>
+        <?php } ?>
+    </div>
+    <?php } ?>
     <div class="col-12 px-0">
         <?php if($lang=="ar"  && $api['advs']->header_status==1)
             echo $api['advs']->header_ar;
