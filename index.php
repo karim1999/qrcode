@@ -183,13 +183,15 @@ require dirname(__FILE__)."/lib/countrycodes.php";
 <body class="bg-light <?php echo $_SESSION['mode'] == 'night' ? 'dark' : ''; ?>">
 <div class="col-12 px-0" style="">
     <?php if($api['advs']->header_status==1){ ?>
-        <div class="col-12 px-0" style="background-color: #EB593C; color: white; text-align: center; padding: 5px">
-            <?php if($lang=="ar"){ ?>
-                <?php echo $api['advs']->header_ar; ?>
-            <?php }else{ ?>
-                <?php echo $api['advs']->header_en; ?>
-            <?php } ?>
-        </div>
+        <?php if($lang=="ar"){ ?>
+            <div class="col-12 px-0" style="background-color: #EB593C; color: white; text-align: center; padding: 5px; direction: rtl">
+                <?php echo preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $api['advs']->header_ar); ?>
+            </div>
+        <?php }else{ ?>
+            <div class="col-12 px-0" style="background-color: #EB593C; color: white; text-align: center; padding: 5px; direction: ltr">
+                <?php echo preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $api['advs']->header_en); ?>
+            </div>
+        <?php } ?>
     <?php } ?>
 
     <div class="container {{session('mode')=='night' ? 'dark': ''}}" style="padding: 10px 5px 5px; height: auto">
