@@ -53,6 +53,15 @@ require dirname(__FILE__)."/lib/countrycodes.php";
     <link href="js/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174669370-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-174669370-6');
+    </script>
 
 
     <?php $version= '?v='.time(); ?>
